@@ -269,19 +269,19 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2019/09/13/GDB命令最佳实践/"
-           data-tag="调试"
-           data-author="" >
-            <span class="post-title" title="GDB命令最佳实践">GDB命令最佳实践</span>
-            <span class="post-date" title="2019-09-13 17:34:27">2019/09/13</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/10/hello-world/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-09-10 12:49:16">2019/09/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/13/GDB命令最佳实践/"
+           data-tag="调试"
+           data-author="" >
+            <span class="post-title" title="GDB命令最佳实践">GDB命令最佳实践</span>
+            <span class="post-date" title="2019-09-13 17:34:27">2019/09/13</span>
         </a>
         
         <a  class=""
@@ -389,7 +389,7 @@
 
 <h1><span id="源代码">源代码</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb)list # 显示当前$IP附近的源代码，多次调用将显示更多源代码</span><br><span class="line">(gdb)list 3333 # 显示当前指令所在源文件的第3333行源代码</span><br><span class="line">(gdb)list xxx.cpp:3333 # 显示指定文件位置的源代码</span><br><span class="line">(gdb)list main # 显示main函数前后的源代码</span><br><span class="line">(gdb)show directories # 显示源代码搜索路径</span><br><span class="line">(gdb)directory ~/mycode/myproject # 添加源代码搜索路径</span><br></pre></td></tr></table></figure>
 
-<h1><span id="编译相关">编译相关</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>gcc -o0 -g -fno-omit-frame-pointer xx.cpp # 禁止优化，生成符号信息，保留栈帧指针</span><br></pre></td></tr></table></figure>
+<h1><span id="编译相关">编译相关</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">gcc -o0 -g -fno-omit-frame-pointer xx.cpp <span class="comment"># 禁止优化，生成符号信息，保留栈帧指针</span></span></span><br></pre></td></tr></table></figure>
 
 
       
