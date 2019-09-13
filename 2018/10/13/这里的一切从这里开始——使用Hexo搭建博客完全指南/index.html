@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 博客搭建 ">
   <meta name="description" content="这里的一切从这里开始——使用Hexo搭建博客完全指南 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 使用gdb启动进程1$gdb --rags exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  断点设置断点查看断点禁用断点删除断点变量信息查看所有参数信息1234# 查看素有局部变量的值$info locals# 查看所有入参信息$info args  线程信息显示所有线程的栈1$t">
+<meta name="description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
 <meta name="keywords" content="调试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GDB命令最佳实践">
 <meta property="og:url" content="http://yoursite.com/2019/09/13/GDB命令最佳实践/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 使用gdb启动进程1$gdb --rags exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  断点设置断点查看断点禁用断点删除断点变量信息查看所有参数信息1234# 查看素有局部变量的值$info locals# 查看所有入参信息$info args  线程信息显示所有线程的栈1$t">
+<meta property="og:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-13T01:39:08.673Z">
+<meta property="og:updated_time" content="2019-09-13T12:07:00.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GDB命令最佳实践">
-<meta name="twitter:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 使用gdb启动进程1$gdb --rags exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  断点设置断点查看断点禁用断点删除断点变量信息查看所有参数信息1234# 查看素有局部变量的值$info locals# 查看所有入参信息$info args  线程信息显示所有线程的栈1$t">
+<meta name="twitter:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
 
 
 <link rel="icon" href="/img/avatar.jpg">
