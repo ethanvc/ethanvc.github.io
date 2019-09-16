@@ -6,18 +6,13 @@
   <meta name="keywords" content=" 调试 ">
   <meta name="description" content="GDB命令最佳实践 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
-<meta name="keywords" content="调试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="GDB命令最佳实践">
-<meta property="og:url" content="https://ethanvc.github.io/2019/09/13/GDB命令最佳实践/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://ethanvc.github.io/archives/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-13T12:07:00.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GDB命令最佳实践">
-<meta name="twitter:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
+<meta name="twitter:title" content="Hexo">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -234,7 +229,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-13 20:07:00'>2019-09-13 17:34</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-16 09:50:55'>2019-09-13 17:34</time>
         
     </div>
     <div class="article-meta">
@@ -256,7 +251,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">开始调试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">使用gdb启动进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">附加到已经运行的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">调试core dump文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">全局信息查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">执行流控制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">断点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">常用断点操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">变量信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看所有局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看当前栈帧的所有参数信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看类型的信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看指定变量的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">监控变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">线程信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">显示所有线程的栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">源代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">编译相关</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">开始调试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">使用gdb启动进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">附加到已经运行的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">调试core dump文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">全局信息查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">执行流控制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">断点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">常用断点操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">变量信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看所有局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看当前栈帧的所有参数信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看类型的信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">查看指定变量的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">监控变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">线程信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">显示所有线程的栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">源代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">编译相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">关闭优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">内存问题定位(AddressSanitizer)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">参考资料</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -272,38 +267,39 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1><span id="开始调试">开始调试</span></h1><p>开始调试前需要将gdb附加到目标进程（被调试进程）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示</span><br></pre></td></tr></table></figure>
-
-<h2><span id="使用gdb启动进程">使用gdb启动进程</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$gdb --args exe-path arg1 arg2 ...</span><br></pre></td></tr></table></figure>
-
-<h2><span id="附加到已经运行的进程">附加到已经运行的进程</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$gdb attach pid</span><br></pre></td></tr></table></figure>
-
-<h2><span id="调试core-dump文件">调试core dump文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$gdb exe-file-path core-dump-file-path</span><br></pre></td></tr></table></figure>
-
-<h1><span id="全局信息查看">全局信息查看</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb) info program</span><br><span class="line">	Using the running image of child Thread 0x7ffff7eda540 (LWP 87962).(线程ID)</span><br><span class="line">Program stopped at 0x33218d0.</span><br><span class="line">It stopped at breakpoint 1.</span><br><span class="line">(gdb)info functions # 列出当前模块的所有函数</span><br><span class="line">(gdb)info functions UpdateAuthTokenInfo # 列出包含字符串UpdateAuthTokenInfo的函数</span><br></pre></td></tr></table></figure>
-
-<h1><span id="执行流控制">执行流控制</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb)s # step，单步进入函数执行</span><br><span class="line">(gdb)n # next，单步不进入函数执行</span><br><span class="line">(gdb)c # continue，继续执行，直到遇到断点或异常</span><br><span class="line">(gdb)r # run，启动程序执行，直到遇到断点</span><br><span class="line">(gdb)start # 启动程序执行，单步</span><br><span class="line">(gdb)set step-mode on # 汇编级别调试</span><br></pre></td></tr></table></figure>
-
-<h1><span id="断点">断点</span></h1><h2><span id="常用断点操作">常用断点操作</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(gdb)break main # main函数设置断点</span><br><span class="line">(gdb)break TraceLogTestWebServiceImpl_TestTraceLog::NormalTest # 成员函数断点</span><br><span class="line">(gdb)info break # 查看所有断点信息</span><br><span class="line">(gdb)disable 3 # 禁用编号3的断点，编号可通过info break查看</span><br><span class="line">(gdb)enable 3 # 启用编号3的断点</span><br><span class="line">(gdb)delete 3 # 删除编号为3的断点</span><br><span class="line">(gdb)break main:578 # 在main函数所在文件的578行设置断点</span><br></pre></td></tr></table></figure>
-
-<h1><span id="变量信息">变量信息</span></h1><h2><span id="查看所有局部变量">查看所有局部变量</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(gdb)info locals</span><br></pre></td></tr></table></figure>
-
-<h2><span id="查看当前栈帧的所有参数信息">查看当前栈帧的所有参数信息</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(gdb)info args</span><br></pre></td></tr></table></figure>
-
-<h2><span id="查看类型的信息">查看类型的信息</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(gdb)ptype std::string # 显示string类型的定义</span><br></pre></td></tr></table></figure>
-
-<h2><span id="查看指定变量的值">查看指定变量的值</span></h2><p>p为print的简化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(gdb)p *(boost::filesystem::path*)0x3876adef # 将内存解析成指定对象显示</span><br><span class="line">(gdb)p this # 显示this指针的值</span><br><span class="line">(gdb)p *this # 显示this对象的值</span><br><span class="line">(gdb)p sizeof(std::string) # 显示类型所占内存大小</span><br></pre></td></tr></table></figure>
-
-<h2><span id="监控变量">监控变量</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(gdb)display *this # 每次终端后，打印一次*this的值</span><br></pre></td></tr></table></figure>
-
-<h1><span id="线程信息">线程信息</span></h1><h2><span id="显示所有线程的栈">显示所有线程的栈</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(gdb)thread apply all bt # 显示所有线程的栈信息</span><br><span class="line">(gdb)frame 2 # 切换栈帧</span><br></pre></td></tr></table></figure>
-
-<h1><span id="源代码">源代码</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb)list # 显示当前$IP附近的源代码，多次调用将显示更多源代码</span><br><span class="line">(gdb)list 3333 # 显示当前指令所在源文件的第3333行源代码</span><br><span class="line">(gdb)list xxx.cpp:3333 # 显示指定文件位置的源代码</span><br><span class="line">(gdb)list main # 显示main函数前后的源代码</span><br><span class="line">(gdb)show directories # 显示源代码搜索路径</span><br><span class="line">(gdb)directory ~/mycode/myproject # 添加源代码搜索路径</span><br></pre></td></tr></table></figure>
-
-<h1><span id="编译相关">编译相关</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>gcc -o0 -g -fno-omit-frame-pointer xx.cpp # 禁止优化，生成符号信息，保留栈帧指针</span><br></pre></td></tr></table></figure>
-
-
+<pre><code>(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示</code></pre><h2><span id="使用gdb启动进程">使用gdb启动进程</span></h2><pre><code>$gdb --args exe-path arg1 arg2 ...</code></pre><h2><span id="附加到已经运行的进程">附加到已经运行的进程</span></h2><pre><code>$gdb attach pid</code></pre><h2><span id="调试core-dump文件">调试core dump文件</span></h2><pre><code>$gdb exe-file-path core-dump-file-path</code></pre><h1><span id="全局信息查看">全局信息查看</span></h1><pre><code class="shell">(gdb) info program
+    Using the running image of child Thread 0x7ffff7eda540 (LWP 87962).(线程ID)
+Program stopped at 0x33218d0.
+It stopped at breakpoint 1.
+(gdb)info functions # 列出当前模块的所有函数
+(gdb)info functions UpdateAuthTokenInfo # 列出包含字符串UpdateAuthTokenInfo的函数</code></pre>
+<h1><span id="执行流控制">执行流控制</span></h1><pre><code class="shell">(gdb)s # step，单步进入函数执行
+(gdb)n # next，单步不进入函数执行
+(gdb)c # continue，继续执行，直到遇到断点或异常
+(gdb)r # run，启动程序执行，直到遇到断点
+(gdb)start # 启动程序执行，单步
+(gdb)set step-mode on # 汇编级别调试</code></pre>
+<h1><span id="断点">断点</span></h1><h2><span id="常用断点操作">常用断点操作</span></h2><pre><code class="shell">(gdb)break main # main函数设置断点
+(gdb)break TraceLogTestWebServiceImpl_TestTraceLog::NormalTest # 成员函数断点
+(gdb)info break # 查看所有断点信息
+(gdb)disable 3 # 禁用编号3的断点，编号可通过info break查看
+(gdb)enable 3 # 启用编号3的断点
+(gdb)delete 3 # 删除编号为3的断点
+(gdb)break main:578 # 在main函数所在文件的578行设置断点</code></pre>
+<h1><span id="变量信息">变量信息</span></h1><h2><span id="查看所有局部变量">查看所有局部变量</span></h2><pre><code>(gdb)info locals</code></pre><h2><span id="查看当前栈帧的所有参数信息">查看当前栈帧的所有参数信息</span></h2><pre><code>(gdb)info args</code></pre><h2><span id="查看类型的信息">查看类型的信息</span></h2><pre><code>(gdb)ptype std::string # 显示string类型的定义</code></pre><h2><span id="查看指定变量的值">查看指定变量的值</span></h2><p>p为print的简化。</p>
+<pre><code>(gdb)p *(boost::filesystem::path*)0x3876adef # 将内存解析成指定对象显示
+(gdb)p this # 显示this指针的值
+(gdb)p *this # 显示this对象的值
+(gdb)p sizeof(std::string) # 显示类型所占内存大小</code></pre><h2><span id="监控变量">监控变量</span></h2><pre><code>(gdb)display *this # 每次终端后，打印一次*this的值</code></pre><h1><span id="线程信息">线程信息</span></h1><h2><span id="显示所有线程的栈">显示所有线程的栈</span></h2><pre><code class="shell">(gdb)thread apply all bt # 显示所有线程的栈信息
+(gdb)frame 2 # 切换栈帧</code></pre>
+<h1><span id="源代码">源代码</span></h1><pre><code class="shell">(gdb)list # 显示当前$IP附近的源代码，多次调用将显示更多源代码
+(gdb)list 3333 # 显示当前指令所在源文件的第3333行源代码
+(gdb)list xxx.cpp:3333 # 显示指定文件位置的源代码
+(gdb)list main # 显示main函数前后的源代码
+(gdb)show directories # 显示源代码搜索路径
+(gdb)directory ~/mycode/myproject # 添加源代码搜索路径</code></pre>
+<h1><span id="编译相关">编译相关</span></h1><h2><span id="关闭优化">关闭优化</span></h2><pre><code>$gcc -o0 -g -fno-omit-frame-pointer xx.cpp # 禁止优化，生成符号信息，保留栈帧指针</code></pre><h2><span id="内存问题定位addresssanitizer">内存问题定位(AddressSanitizer)</span></h2><pre><code class="shell">$gcc -fsanitize=address xx.cpp</code></pre>
+<h1><span id="参考资料">参考资料</span></h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 xh**ht@qq.com </span>
     </div>
@@ -320,7 +316,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="HT">HT</a></p>
     <p><span class="copy-title">发布时间:</span>2019-09-13, 17:34:27</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-13, 20:07:00</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-16, 09:50:55</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/13/GDB命令最佳实践/" title="GDB命令最佳实践">https://ethanvc.github.io/2019/09/13/GDB命令最佳实践/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

@@ -6,18 +6,13 @@
   <meta name="keywords" content>
   <meta name="description" content="Hello World | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
-<meta name="keywords" content="调试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="GDB命令最佳实践">
-<meta property="og:url" content="https://ethanvc.github.io/2019/09/13/GDB命令最佳实践/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://ethanvc.github.io/archives/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-13T12:07:00.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GDB命令最佳实践">
-<meta name="twitter:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 1(gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示  使用gdb启动进程1$gdb --args exe-path arg1 arg2 ...  附加到已经运行的进程1$gdb attach pid  调试core dump文件1$gdb exe-file-path core-dump-">
+<meta name="twitter:title" content="Hexo">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -266,17 +261,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
+<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3><span id="run-server">Run server</span></h3><pre><code class="bash">$ hexo server</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3><span id="generate-static-files">Generate static files</span></h3><pre><code class="bash">$ hexo generate</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><pre><code class="bash">$ hexo deploy</code></pre>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
