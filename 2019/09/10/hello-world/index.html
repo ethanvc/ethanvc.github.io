@@ -6,13 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="Hello World | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://ethanvc.github.io/archives/index.html">
+<meta name="description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 (gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示使用gdb启动进程$gdb --args exe-path arg1 arg2 ...附加到已经运行的进程$gdb attach pid调试core dump文件$gdb exe-file-path core-dump-file-path全">
+<meta name="keywords" content="调试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GDB命令最佳实践">
+<meta property="og:url" content="https://ethanvc.github.io/2019/09/13/GDB命令最佳实践/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 (gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示使用gdb启动进程$gdb --args exe-path arg1 arg2 ...附加到已经运行的进程$gdb attach pid调试core dump文件$gdb exe-file-path core-dump-file-path全">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-16T01:50:55.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="GDB命令最佳实践">
+<meta name="twitter:description" content="开始调试开始调试前需要将gdb附加到目标进程（被调试进程）。 (gdb)set print pretty on # 更整洁的显示，如结构体内容，每个成员一行显示使用gdb启动进程$gdb --args exe-path arg1 arg2 ...附加到已经运行的进程$gdb attach pid调试core dump文件$gdb exe-file-path core-dump-file-path全">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -115,7 +120,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(3)</small></div></li>
+    <li><div class="all active">全部文章<small>(5)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -127,7 +132,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
+<input type="hidden" id="yelog_site_posts_number" value="5">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -162,11 +167,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">调试</a>
+        <a href="javascript:" class="color5">博客搭建</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">博客搭建</a>
+        <a href="javascript:" class="color3">调试</a>
     </li>
     
     <div class="clearfix"></div>
@@ -176,11 +181,27 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2019/09/13/GDB命令最佳实践/"
-           data-tag="调试"
+           href="/2019/09/28/hexo源码分析/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="GDB命令最佳实践">GDB命令最佳实践</span>
-            <span class="post-date" title="2019-09-13 17:34:27">2019/09/13</span>
+            <span class="post-title" title="hexo源码分析">hexo源码分析</span>
+            <span class="post-date" title="2019-09-28 09:38:54">2019/09/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/26/常用linxu命令示例/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="常用linxu命令示例">常用linxu命令示例</span>
+            <span class="post-date" title="2019-09-26 09:27:27">2019/09/26</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/10/13/这里的一切从这里开始——使用Hexo搭建博客完全指南/"
+           data-tag="博客搭建"
+           data-author="" >
+            <span class="post-title" title="这里的一切从这里开始——使用Hexo搭建博客完全指南">这里的一切从这里开始——使用Hexo搭建博客完全指南</span>
+            <span class="post-date" title="2018-10-13 17:34:27">2018/10/13</span>
         </a>
         
         <a  class=""
@@ -192,11 +213,11 @@
         </a>
         
         <a  class=""
-           href="/2018/10/13/这里的一切从这里开始——使用Hexo搭建博客完全指南/"
-           data-tag="博客搭建"
+           href="/2019/09/13/GDB命令最佳实践/"
+           data-tag="调试"
            data-author="" >
-            <span class="post-title" title="这里的一切从这里开始——使用Hexo搭建博客完全指南">这里的一切从这里开始——使用Hexo搭建博客完全指南</span>
-            <span class="post-date" title="2018-10-13 17:34:27">2018/10/13</span>
+            <span class="post-title" title="GDB命令最佳实践">GDB命令最佳实践</span>
+            <span class="post-date" title="2019-09-13 17:34:27">2019/09/13</span>
         </a>
         
     </nav>
@@ -245,7 +266,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -261,13 +282,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><pre><code class="bash">$ hexo server</code></pre>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><pre><code class="bash">$ hexo generate</code></pre>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><pre><code class="bash">$ hexo deploy</code></pre>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
@@ -348,7 +369,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#调试','#博客搭建',],
+            'data': ['#博客搭建','#调试',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
