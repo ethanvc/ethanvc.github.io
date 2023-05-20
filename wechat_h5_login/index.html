@@ -9,7 +9,7 @@
             let url = new URL("https://open.weixin.qq.com/connect/oauth2/authorize");
             let queryStrs = new URLSearchParams();
             queryStrs.append("appid", appid);
-            queryStrs.append("redirect_uri", "");
+            queryStrs.append("redirect_uri", "https://ethanvc.github.io/wechat_h5_login");
             queryStrs.append("response_type", "code");
             queryStrs.append("scope", "snsapi_userinfo");
             queryStrs.append("state", "user-defined-state");
